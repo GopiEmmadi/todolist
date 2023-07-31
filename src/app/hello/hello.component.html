@@ -1,0 +1,12 @@
+<ol *ngIf="flag">
+  <li *ngFor="let task of tasks; let i=index;">
+      {{task.name}} <button type="button" routerLink="/edit">Edit</button>
+    <button type="button" (click)="detailsButton(i)">Details</button>
+    <button type="button" (click)="completeButton(i)">Mark completed</button>
+  </li>
+</ol>
+<div *ngIf="!flag">
+  <p>Task name: {{task.name}}</p>
+  <p>Task description: {{task.description}}</p>
+  <p>Task dueDate: {{task.dueDate}}</p>
+</div>

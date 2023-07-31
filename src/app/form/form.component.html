@@ -1,0 +1,13 @@
+<form *ngIf="flag" (ngSubmit)="addTask(taskName.value, description.value, dueDate.value)">
+  <label for="taskName">Task Name:</label>
+  <input type="text" id="taskName" #taskName required>
+
+  <label for="description">Description:</label>
+  <textarea rows="5" cols="10" id="description" #description required></textarea>
+
+  <label for="dueDate">Due Date:</label>
+  <input type="date" id="dueDate" #dueDate required>
+
+  <button type="submit">Add Task</button>
+</form>
+<a *ngIf="!flag" routerLink="/create" (click)="change()">add another</a>
