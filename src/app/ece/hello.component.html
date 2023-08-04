@@ -1,0 +1,10 @@
+<ol>
+  <li *ngFor="let task of tasks; let i=index;">
+      {{task.name}} <button type="button" (click)="editButton(i)">view</button>
+  </li>
+</ol>
+<div *ngIf="flag">
+  <p>student name: {{task.name}}</p>
+  <p>student age: {{task.age}}</p>
+  <p>student fname: {{task.fname}}</p>
+</div>
